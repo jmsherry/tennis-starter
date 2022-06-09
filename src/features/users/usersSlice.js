@@ -9,10 +9,9 @@ const initialState = {
 };
 
 export const login = createAsyncThunk(
-  'user/fetchUser',
+  'auth/fetchUser',
   async (creds) => {
     const response = await fetchUser(creds);
-    console.log(response)
     return response;
   }
 );
@@ -35,6 +34,7 @@ export const userSlice = createSlice({
         console.log(action)
         state.status = 'idle';
         state.user = action.payload.user;
+        state.error = null;
         state.token = action.payload.accessToken;
       })
       .addCase(login.rejected, (state, action) => {

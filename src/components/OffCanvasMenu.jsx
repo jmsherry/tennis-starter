@@ -1,17 +1,19 @@
-import React, { useContext } from "react";
+import React from "react";
 import { NavLink } from "react-router-dom";
 import Drawer from "@mui/material/Drawer";
 import Box from "@mui/material/Box";
 import List from "@mui/material/List";
 import ListItem from "@mui/material/ListItem";
 import ListItemButton from "@mui/material/ListItemButton";
-// import ErrorBoundary from "./ErrorBoundary";
+import Divider from '@mui/material/Divider';
 import { useSelector, useDispatch } from "react-redux";
 import {selectMenuState, close} from './../features/ui/uiSlice'
+import { selectUser } from "./../features/users/usersSlice";
 
 const OCMenu = (props) => {
   console.log('c', close());
   const isOpen = useSelector(selectMenuState)
+  const user = useSelector(selectUser)
   const dispatch = useDispatch();
   return (
     <Drawer open={isOpen} onClose={() => dispatch(close())}>
@@ -32,7 +34,10 @@ const OCMenu = (props) => {
               Contact
             </ListItemButton>
           </ListItem>
-          <ListItem key={4} disablePadding>
+          <Divider />
+          {user?.isAdmin &&  (
+            <>
+            <ListItem key={4} disablePadding>
             <ListItemButton component={NavLink} to="people/add">
               Add Person
             </ListItemButton>
@@ -42,6 +47,7 @@ const OCMenu = (props) => {
               Admin
             </ListItemButton>
           </ListItem>
+          </>)}
         </List>
       </Box>
     </Drawer>

@@ -1,6 +1,5 @@
 import { configureStore, combineReducers } from '@reduxjs/toolkit';
 import {
-  persistStore,
   persistReducer,
   FLUSH,
   REHYDRATE,
@@ -13,6 +12,8 @@ import storage from 'redux-persist/lib/storage'
 
 import userReducer from '../features/users/usersSlice';
 import uiReducer from '../features/ui/uiSlice';
+import membersReducer from '../features/members/membersSlice'
+import courtsReducer from '../features/courts/courtsSlice'
 
 const persistConfig = {
   key: 'root',
@@ -23,6 +24,8 @@ const persistConfig = {
 const rootReducer = combineReducers({
   auth: userReducer,
   ui: uiReducer,
+  members: membersReducer,
+  courts: courtsReducer,
 })
 
 const persistedReducer = persistReducer(persistConfig, rootReducer)

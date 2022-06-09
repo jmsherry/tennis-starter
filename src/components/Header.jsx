@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React from "react";
 import { NavLink } from "react-router-dom";
 
 import AppBar from "@mui/material/AppBar";
@@ -13,10 +13,9 @@ import { selectUser, logout } from "./../features/users/usersSlice";
 import { toggle } from "./../features/ui/uiSlice";
 
 function Header() {
-
   const user = useSelector(selectUser);
-  console.log("🚀 ~ file: Header.jsx ~ line 17 ~ Header ~ user", user)
-  
+  console.log("🚀 ~ file: Header.jsx ~ line 17 ~ Header ~ user", user);
+
   const dispatch = useDispatch();
   const toggleMenu = () => dispatch(toggle());
   const doLogout = () => dispatch(logout());
@@ -37,9 +36,13 @@ function Header() {
           {user ? `Hello ${user?.firstName}` : "Not Logged In"}
         </Typography>
         {user ? (
-          <Button color="inherit" onClick={() => doLogout()}>Logout</Button>
+          <Button color="inherit" onClick={() => doLogout()}>
+            Logout
+          </Button>
         ) : (
-          <Button color="inherit" component={NavLink} to="/login">Login</Button>
+          <Button color="inherit" component={NavLink} to="/login">
+            Login
+          </Button>
         )}
       </Toolbar>
     </AppBar>

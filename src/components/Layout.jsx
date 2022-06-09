@@ -6,7 +6,7 @@ import Container from "@mui/material/Container";
 function Layout({ children }) {
   return (
     <>
-      <Container maxWidth="sm">
+      <Container maxWidth="lg">
         <Box sx={{ bgcolor: "#cfe8fc", height: "100vh", overflow: "auto" }}>
           {children}
         </Box>

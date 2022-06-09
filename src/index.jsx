@@ -22,6 +22,8 @@ import NotFound from "./pages/NotFound";
 import Login from "./pages/Login";
 import Admin from "./pages/Admin";
 import EditMembers from "./pages/EditMembers";
+import UpdateMember from "./pages/UpdateMember";
+import AddMembers from "./pages/AddMembers";
 import EditCourts from "./pages/EditCourts";
 
 const container = document.getElementById("root");
@@ -45,6 +47,8 @@ root.render(
                     <Route path="admin">
                       <Route path="members">
                         <Route index element={<EditMembers />} />
+                        <Route path="add" element={<AddMembers />} />
+                        <Route path="update/:id" element={<UpdateMember />} />
                         <Route path="*" element={<NotFound />} />
                       </Route>
                       <Route path="courts">

@@ -4,7 +4,7 @@ export async function fetchUser(creds) {
     const response = await fetch('http://localhost:8000/login', {
       method: "POST",
       headers: {
-        "content-type": "Application/json",
+        'Content-Type': 'application/json'
       },
       body: JSON.stringify(creds)
     });
