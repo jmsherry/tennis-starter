@@ -40,3 +40,11 @@ This is just my suggestion but I think it's best to do it this way to avoid scop
 * Try to get the easy bits done first, so if there's lots of fetching of data get it and render it out to a list page
 * Then try to do the CUD parts of CRUD for 1 module (e.g. the members); then do the next module (the courts), etc.
 * Fineries last. The framework MUI should take care of most of the styling for you. Get the app functionally working before you tidy up. Don't spend too long on CSS problems, you can fix those later.
+
+7. When it goes wrong
+* The downside of your job is that it is a very complex one and it regularly goes wrong. 
+* To debug this stuff you must be patient
+* As it is your job to get data from one place to another you must follow that journey when the data doesn't show up and find out where it went wrong. 
+* console.logs can help; so can breakpoints; so can {JSON.stringify(someObject)} 
+
+Remember: We're there for you BUT as you're progressing try to push yourself more to solve the problems. Try to keep calm and methodical. All this will help in time!
