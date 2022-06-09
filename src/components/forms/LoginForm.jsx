@@ -68,6 +68,7 @@ export default function LoginForm() {
               {...field}
               label="password"
               helperText={errors.password?.message}
+              autoComplete="current-password"
             />
           )}
         />

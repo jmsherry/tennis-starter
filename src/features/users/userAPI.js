@@ -1,4 +1,5 @@
 const { API_URL = "http://localhost:8000" } = process.env;
+console.log(process.env)
 
 export async function fetchUser(creds) {
   console.log("url", API_URL);
