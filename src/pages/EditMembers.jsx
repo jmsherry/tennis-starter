@@ -10,31 +10,27 @@ const columns = [
   {
     field: "firstName",
     headerName: "First name",
-    minWidth: 150,
     flexGrow: 1,
-    flexBasis: '100%',
+    flex: 1,
     editable: false,
   },
   {
     field: "lastName",
     headerName: "Last name",
-    minWidth: 150,
-    flexBasis: '100%',
+    flex: 1,
     editable: false,
   },
   {
     field: "email",
     headerName: "Email",
-    type: "number",
-    minWidth: 210,
-    flexBasis: '100%',
-    editable: true,
+    flex: 1,
+    editable: false,
   },
   {
     headerName: "Actions",
     field: '',
-    minWidth: 200,
-    flexBasis: '100%',
+    flex: 1,
+    headerAlign: 'center',
     renderCell: (params) => {
       return <ButtonSet params={params} />;
     }
@@ -45,7 +41,11 @@ function ButtonSet({params}){
 // console.log("🚀 ~ file: EditMembers.jsx ~ line 39 ~ ButtonSet ~ params", params)
   const dispatch = useDispatch();
   return (
-    <>
+    <div style={{
+      display: 'flex',
+      justifyContent: 'center',
+      flex: 1
+    }}>
       <Button
         variant="contained"
         color="warning"
@@ -67,7 +67,7 @@ function ButtonSet({params}){
       >
         Delete
       </Button>
-    </>
+    </div>
   )
 }
 
@@ -82,7 +82,7 @@ function EditMembers() {
   return (
     <div>
       <h1>Members</h1>
-      <div><Button variant={'contained'} color="primary" component={NavLink} to="/admin/members/add">Add Members</Button></div>
+      <div style={{ marginBlockEnd: '1em'}}><Button variant={'contained'} color="primary" component={NavLink} to="/admin/members/add">Add Members</Button></div>
       <div style={{ height: 400, width: "100%" }}>
       {/* <pre>
         {JSON.stringify(members, null, ' ')}
