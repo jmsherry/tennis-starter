@@ -38,7 +38,7 @@ const OCMenu = (props) => {
           {user?.isAdmin &&  (
             <>
             <ListItem key={4} disablePadding>
-            <ListItemButton component={NavLink} to="members/add">
+            <ListItemButton component={NavLink} to="admin/members/add">
               Add Member
             </ListItemButton>
           </ListItem>
