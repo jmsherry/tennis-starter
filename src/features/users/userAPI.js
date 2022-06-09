@@ -1,7 +1,9 @@
+const { API_URL = "" } = process.env;
+
 export async function fetchUser(creds) {
   console.log('creds', creds);
   try {
-    const response = await fetch('http://localhost:8000/login', {
+    const response = await fetch(`${API_URL}/login`, {
       method: "POST",
       headers: {
         'Content-Type': 'application/json'

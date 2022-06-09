@@ -1,6 +1,8 @@
+const { API_URL = "" } = process.env;
+
 export async function fetchMembers() {
   try {
-    const response = await fetch("http://localhost:8000/members");
+    const response = await fetch(`${API_URL}/members`);
     if (!response.ok) throw response;
     const data = await response.json();
     return data;
@@ -10,7 +12,7 @@ export async function fetchMembers() {
 }
 export async function fetchMember(id) {
   try {
-    const response = await fetch(`http://localhost:8000/members/${id}`);
+    const response = await fetch(`${API_URL}/members/${id}`);
     if (!response.ok) throw response;
     const data = await response.json();
     return data;
@@ -21,7 +23,7 @@ export async function fetchMember(id) {
 
 export async function addMember(newMemberData) {
   try {
-    const response = await fetch("http://localhost:8000/members", {
+    const response = await fetch(`${API_URL}/members`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -38,7 +40,7 @@ export async function addMember(newMemberData) {
 
 export async function updateMember(updatedMember) {
   try {
-    const response = await fetch(`http://localhost:8000/members/${updatedMember._id}`, {
+    const response = await fetch(`${API_URL}/members/${updatedMember._id}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
@@ -46,7 +48,7 @@ export async function updateMember(updatedMember) {
       body: JSON.stringify(updatedMember),
     });
     if (!response.ok) throw response;
-    console.log('in PUT, returning', updatedMember)
+    console.log("in PUT, returning", updatedMember);
     return updatedMember;
   } catch (err) {
     return Promise.reject(err.statusText || err.message);
@@ -55,7 +57,7 @@ export async function updateMember(updatedMember) {
 
 export async function removeMember(id) {
   try {
-    const response = await fetch(`http://localhost:8000/members/${id}`, {
+    const response = await fetch(`${API_URL}/members/${id}`, {
       method: "DELETE",
     });
     if (!response.ok) throw response;

@@ -83,7 +83,7 @@ function EditMembers() {
 
   useEffect(() => {
     dispatch(getMembers());
-  }, []);
+  }, [dispatch]);
 
   return (
     <div>

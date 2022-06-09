@@ -15,3 +15,7 @@
 ## DataGrid docs (filtering)
 
 <https://mui.com/x/react-data-grid/filtering/#QuickFilteringGrid.tsx>
+
+## Environment Variables
+
+<https://create-react-app.dev/docs/adding-custom-environment-variables/>
