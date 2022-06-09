@@ -1,6 +1,7 @@
-const { API_URL = "" } = process.env;
+const { API_URL = "http://localhost:8000" } = process.env;
 
 export async function fetchUser(creds) {
+  console.log("url", API_URL);
   console.log('creds', creds);
   try {
     const response = await fetch(`${API_URL}/login`, {

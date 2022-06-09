@@ -1,6 +1,7 @@
-const { API_URL = "" } = process.env;
+const { API_URL = "http://localhost:8000" } = process.env;
 
 export async function fetchMembers() {
+  console.log("url", API_URL);
   try {
     const response = await fetch(`${API_URL}/members`);
     if (!response.ok) throw response;

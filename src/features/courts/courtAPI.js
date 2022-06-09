@@ -1,11 +1,11 @@
-const { API_URL = "" } = process.env;
+const { API_URL = "http://localhost:8000" } = process.env;
 
 export async function fetchCourts() {
   try {
     const response = await fetch(`${API_URL}/courts`);
     if (!response.ok) throw response;
     const data = await response.json();
-    return data;
+    return data;  
   } catch (err) {
     return Promise.reject(err.statusText || err.message);
   }
