@@ -29,11 +29,11 @@ const OCMenu = (props) => {
               About
             </ListItemButton>
           </ListItem>
-          <ListItem key={3} disablePadding>
+          {/* <ListItem key={3} disablePadding>
             <ListItemButton component={NavLink} to="contact">
               Contact
             </ListItemButton>
-          </ListItem>
+          </ListItem> */}
           <Divider />
           {user?.isAdmin &&  (
             <>

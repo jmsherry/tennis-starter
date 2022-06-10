@@ -54,6 +54,7 @@ export const memberSlice = createSlice({
   name: 'members',
   initialState,
   reducers: {
+    
   },
   extraReducers: (builder) => {
     builder
